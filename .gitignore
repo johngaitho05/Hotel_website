@@ -11,3 +11,6 @@ db.sqlite3
 /static
 Pipfile
 Pipfile.lock
+/venv
+*.xml
+*.iml
