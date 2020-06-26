@@ -2,11 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c754f215-370b-4f14-bdc2-11a0d0c20d14" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mhotel/static/img/dish1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mhotel/static/img/dish2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mhotel/static/img/dish3.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mhotel/static/img/dish4.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mhotel/static/img/dish5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mhotel/static/img/dish6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mhotel/static/img/image1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mhotel/static/img/image2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mhotel/static/img/image3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mhotel/static/img/image4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/MHOTEL.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MHOTEL.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,20 +51,25 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="ProjectId" id="1ShqbnZPMlAt1GrWgFJHGj3M3XN" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/VSProjects/portfolio" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.django.DjangoModulesConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\John YK\PycharmProjects\Hotel_website\mhotel\static\img" />
       <recent name="C:\Users\John YK\Desktop\MHOTEL\mhotel\static" />
       <recent name="C:\Users\John YK\Desktop\MHOTEL\static\css" />
       <recent name="C:\Users\John YK\Desktop\MHOTEL\static\img" />
@@ -73,7 +88,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="MHOTEL" type="Python.DjangoServer" factoryName="Django server">
+    <configuration name="Hotel_website" type="Python.DjangoServer" factoryName="Django server">
       <module name="MHOTEL" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -81,16 +96,16 @@
         <env name="PYTHONUNBUFFERED" value="1" />
         <env name="DJANGO_SETTINGS_MODULE" value="mhotel.settings" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\John YK\PycharmProjects\Hotel_website\venv\Scripts\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="launchJavascriptDebuger" value="false" />
       <option name="port" value="8000" />
       <option name="host" value="" />
       <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="" />
+      <option name="browserUrl" value="http://127.0.0.1:8000/" />
       <option name="runTestServer" value="false" />
       <option name="runNoReload" value="false" />
       <option name="useCustomRunCommand" value="false" />
@@ -108,7 +123,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1568291838797</updated>
-      <workItem from="1572026312375" duration="1199000" />
+      <workItem from="1572026312375" duration="1676000" />
+      <workItem from="1572437690221" duration="2111000" />
+      <workItem from="1572442828021" duration="746000" />
+      <workItem from="1574456475885" duration="5160000" />
+      <workItem from="1588003525615" duration="2962000" />
+      <workItem from="1588223325424" duration="1002000" />
+      <workItem from="1588494377440" duration="1819000" />
+      <workItem from="1592577105251" duration="1513000" />
+      <workItem from="1592634818324" duration="717000" />
     </task>
     <servers />
   </component>
@@ -120,10 +143,15 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
