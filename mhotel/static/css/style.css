@@ -1,3 +1,33 @@
+body{
+    overflow-x: hidden;
+}
+.quick_links{
+    position: fixed;
+    top: 0;
+    right:0;
+    background-color:#fff;
+}
+#user_links{
+    font-size:15px;
+    font-family: Calibri, cursive;
+    border-radius:2px;
+}
+#user_links li{
+    text-decoration: none;
+    display: inline-block;
+    padding-top: 10px;
+    padding-right: 20px;
+}
+#user_links a{
+    text-align: center;
+    color:#777777;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+#user_links a:hover{
+    color:#a8ffa8;
+}
+
 #logo a, a:hover{
     text-decoration:    none;
 }
@@ -5,12 +35,18 @@
     margin-right: 50px;
 }
 #home{
-        background: url(../img/w2.jpg);
-        background-repeat:no-repeat;
-        background-color: #205cd8;
-        background-position: center center;
-        background-attachment: fixed;
-        background-size: cover;
+    /*opacity: .9;*/
+    background: #285cff url("../img/w3.jpg") no-repeat center;
+    background-blend-mode: soft-light;
+    background-size: 100%;
+    min-height: 80Vh;
+}
+.deals-container{
+    min-height: 80vh;
+}
+#deals-button{
+    position: absolute;
+    bottom:20%;
 }
 #imageCarousel{
     background: url(../img/w2.jpg);
@@ -29,7 +65,6 @@ footer{
     background-color: #3f3f3f;
     color:#d5d5d5;
     padding-top: 2rem;
-    padding:50px 0;
     margin:0;
 }
 hr.light{
@@ -42,95 +77,74 @@ hr.light-100{
     border-top: 1px solid #d5d5d5;
     width:100%;
     margin-top: .8rem;
-    margin-bottom: 1rem;   
+    margin-bottom: 1rem;
 }
-    #mainNavBar{
-        position:fixed;
-        top:70px;
-        background-color: #1d3131;
-        margin-left:2%;
-        width:20%;
-    }
-    .navbar-static-top .navbar-collapse{
-      background-color: #1d3131;  
-      border-bottom: none;
-    }
-    .nav a,.navbar-default .navbar-nav > li > a{
-        color:#eb9316;
-        font-weight: 500;
-        font-family: monospace;
-        font-size: 17px;
-    }
-    .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{
-        background-color: #517fa4;
-        color:white;
-    }
-    .home_content,.user_link a{
-        color:#ffffff;   
-    }
-    .user_link{
-        display: inline;
-        padding-right: 30px;
-    }
-    #user_links{
-        position: fixed;
-        top:0;
-        font-size:15px;
-        padding: 6px;
-        font-family:inherit;
-        background-color: #3f3f3f;
-        border-radius:2px;
-        
-            
-    }
-    #user_links a{
-        color:#ffffff;
-        font-weight: 500;
-    }
-    #user_links a:hover{
-        color:#a8ffa8;
-    }
-    .modal-header, .modal-footer, #SignUpModal .modal-body{
-        background-color: #a8ffa8;
-    }
-    .modal-header h4{
-        font-size: 22px;
-        color:#333;
-        text-align: center;
-    }
-    .modal-header{
-        border-bottom: none;
-    }
-    .modal-footer{
-        border-top: none;
-    }
-    #SignUpModal .modal-body{
-        padding-top: 0;
-    }
-    #SignUpModal .modal-footer{
-        padding-top: 0;
-    }
-    #name{
-        color:red;
-        margin-left: 30%;
-    }
-    #article{
-        margin-left: 20%;
-    }
-    #book{
-        margin-top: 170%;
-        margin-left: 10%;
-    }
-    #services{
-        background: #eaef0a00;
-    }
-    section{
-        padding-bottom:30px; 
-        padding-top: 30px;
-        overflow-x: hidden;
-    }
-    
-    #contact .contact-form {
+#mainNavBar{
+    position:fixed;
+    top:70px;
+    background-color: #1d3131;
+    margin-left:2%;
+    width:20%;
+}
+.navbar-static-top .navbar-collapse{
+    background-color: #1d3131;
+    border-bottom: none;
+}
+.nav a,.navbar-default .navbar-nav > li > a{
+    color:#eb9316;
+    font-weight: 500;
+    font-family: monospace;
+    font-size: 17px;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{
+    background-color: #517fa4;
+    color:white;
+}
+.home_content,.user_link a{
+    color:#ffffff;
+}
+
+.modal-header, .modal-footer, #SignUpModal .modal-body{
+    background-color: #a8ffa8;
+}
+.modal-header h4{
+    font-size: 22px;
+    color:#333;
+    text-align: center;
+}
+.modal-header{
+    border-bottom: none;
+}
+.modal-footer{
+    border-top: none;
+}
+#SignUpModal .modal-body{
+    padding-top: 0;
+}
+#SignUpModal .modal-footer{
+    padding-top: 0;
+}
+#name{
+    color:red;
+    margin-left: 30%;
+}
+#article{
+    margin-left: 20%;
+}
+#book{
+    margin-top: 170%;
+    margin-left: 10%;
+}
+#services{
+    background: #eaef0a00;
+}
+section{
+    padding-bottom:30px;
+    padding-top: 30px;
+    overflow-x: hidden;
+}
+
+#contact .contact-form {
     padding:10px 20px;
     background: rgba(245, 244, 244, 0.8);
 }
@@ -141,7 +155,7 @@ hr.light-100{
     font-weight: 600;
     font-family: 'Roboto', sans-serif;
     color: orange
-    
+
 }
 #newsletter{
     margin-top: 20px;
@@ -155,8 +169,8 @@ hr.light-100{
 }
 
 .social a{
-   font-size: 2.5rem;
-   padding-left:1.5rem;
+    font-size: 2.5rem;
+    padding-left:1.5rem;
 }
 .fa-facebook{
     color: #3b5998;
@@ -201,8 +215,8 @@ section hr{
     padding: 0 12px;
 }
 #book-div{
-    min-height:200px;
-    background-color: #50c4dcfa;
+    min-height:170px;
+    background-color: #ffe3a0;
     margin-top: 10px;
     border-radius: 5px;
     width:100%;
@@ -210,6 +224,14 @@ section hr{
 #book_form{
     width:100%;
 }
+#book_form h2{
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #5e5e5e;
+    font-family: 'Tahoma', sans-serif;
+}
+
 #booking-submit{
     float:left;
     margin-top:20px;
@@ -219,7 +241,7 @@ section hr{
     font-size: 16px;
 }
 #more a{
-   text-decoration: underline; 
+    text-decoration: underline;
 }
 
 #contact{
@@ -230,61 +252,61 @@ section hr{
     background: #f9f8f7;
 }
 .book-div h2{
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
 }
 
 .more:hover{
     color:blueviolet;
     text-decoration: underline;
-      
-  }
-  .more:hover{
-      cursor: pointer;
-  }
-  .service_heading{
-      margin-left: 15px;
-      color:#00aced;
-  }
-  
-  .wow{
-      font-size: 17px;
-  } 
-  #book_now{
-      margin-top: 60px;
-      margin-bottom: 0;
-  }  
-  
-  .row{
-      margin-right:0;
-  }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+}
+.more:hover{
+    cursor: pointer;
+}
+.service_heading{
+    margin-left: 15px;
+    color:#00aced;
+}
+
+.wow{
+    font-size: 17px;
+}
+#book_now{
+    margin-top: 60px;
+    margin-bottom: 0;
+}
+
+.row{
+    margin-right:0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*---Media Queries --*/
 @media (max-width: 992px) {
 }
 @media (min-width: 992px) {
-#inputs{
-    float: left;
-    width:80%;
-}
+    #inputs{
+        float: left;
+        width:80%;
+    }
 }
 @media (max-width: 768px) {
-        #imageCarousel{
-    height: 250px;
-    width:100%;
-    margin-top: 10px;
+    #imageCarousel{
+        height: 250px;
+        width:100%;
+        margin-top: 10px;
     }
     #imageCarousel img{
         width: 100%;
@@ -298,50 +320,50 @@ section hr{
         margin-top: 3.5rem;
         margin-bottom: 1rem;
     }
-    .col-lg-8, .col-xs-9, .col-sm-9, 
-    .col-md-9, .col-lg-9, .col-xs-10, 
+    .col-lg-8, .col-xs-9, .col-sm-9,
+    .col-md-9, .col-lg-9, .col-xs-10,
     .col-sm-10, .col-md-10, .col-lg-10,
-    .col-xs-11,.col-sm-11, .col-md-11, 
+    .col-xs-11,.col-sm-11, .col-md-11,
     .col-lg-11,.col-xs-12, .col-sm-12,
     .col-md-12, .col-lg-12{
         padding-right: 0;
-    }   
+    }
 }
 @media (max-width: 576px) {
-    }
+}
 @media (min-width: 768px) {
-.navbar-static-top{
-    top:-50px;
-    border-bottom: none;
-}
-#inputs{
-    float: left;
-    width:85%;
-}
+    .navbar-static-top{
+        top:-50px;
+        border-bottom: none;
+    }
+    #inputs{
+        float: left;
+        width:85%;
+    }
     #imageCarousel{
-    height: 400px;
-    width:100%;
-    margin-top: 30px;
+        height: 400px;
+        width:100%;
+        margin-top: 30px;
     }
     #imageCarousel img{
         width: 100%;
         max-height: 400px;
     }
-.cont_heading hr{
+    .cont_heading hr{
         width:30%;
         margin-top: 3.5rem;
         margin-bottom: 1rem;
     }
 }
 @media (min-width: 576px) {
-     .navbar-default .navbar-brand{
-    font-size: 20px;
-}
-#book_form .book-input{
-      width:200px;
-      margin-right: 20px;
-      margin-bottom: 20px;
-}
+    .navbar-default .navbar-brand{
+        font-size: 20px;
+    }
+    #book_form .book-input{
+        width:200px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
 }
 
 

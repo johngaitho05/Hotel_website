@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c754f215-370b-4f14-bdc2-11a0d0c20d14" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/mhotel/static/img/dish1.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mhotel/static/img/dish2.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mhotel/static/img/dish3.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mhotel/static/img/dish4.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mhotel/static/img/dish5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mhotel/static/img/dish6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mhotel/static/img/image1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mhotel/static/img/image2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mhotel/static/img/image3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mhotel/static/img/image4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/MHOTEL.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MHOTEL.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mhotel/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/mhotel/static/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -62,7 +50,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/VSProjects/portfolio" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -132,6 +120,9 @@
       <workItem from="1588494377440" duration="1819000" />
       <workItem from="1592577105251" duration="1513000" />
       <workItem from="1592634818324" duration="717000" />
+      <workItem from="1594137024826" duration="5634000" />
+      <workItem from="1594207556093" duration="1247000" />
+      <workItem from="1594211233901" duration="3366000" />
     </task>
     <servers />
   </component>

@@ -1,624 +1,618 @@
 
-{% load staticfiles %}
 <!DOCTYPE html>
 <html xml:lang="en" lang="en">
-    <head>
-        <title>TODO supply a title</title>
-        <link rel="stylesheet" href=" {% static 'css/bootstrap.css'%} " />
-        <script type="text/javascript" src="{% static 'js/jquery-3.3.1.js' %}"></script>
-        <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
-        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-        <link href="https://fonts.googleapis.com/css?family=Aclonica|Norican|Yellowtail&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Pontano+Sans&display=swap" rel="stylesheet">
-        <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-        <link href="{% static 'date-picker/dist/css/datepicker.min.css' %}" rel="stylesheet" type="text/css">
-        <script src="{% static 'date-picker/dist/js/datepicker.min.js' %}"></script>
-        <script src="{% static 'date-picker/dist/js/i18n/datepicker.en.js' %}" data-language='en' lang='en'></script>
-        <style type="text/css">
-            body{
-                position: relative;
-            }
-            .affix{
-                top:50px;
-            }
-        </style>
-    </head>
-    <body data-spy="scroll" data-target="#mainNavBar">
-        <nav class="navbar navbar-default navbar-fixed-top navbar-static-top">
-            <div class="container-fluid">
-                <a href="#home" class="scroll navbar-brand"><span style="color:red">City</span><span style="color:greenyellow">Cafe</span></a>
-                <div class="navbar-header">
-                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <nav id="mainNavBar1" >
-                        <ul class="nav nav-pills nav-justified "> <!--the affix class sets the position to fixed but you have to manually specify at what point you want it fixed-->
-                            <li class="active"><a href="#home" class="scroll">Home</a></li>
-                            <li><a href="#services" class="scroll topnavlink">Services</a></li>
-                            <li><a href="#location" class="scroll topnavlink">Location</a></li>
-                            <li><a href="#contact" class="scroll topnavlink">Contact</a></li>
-                            <li><a href="#" class="scroll topnavlink">Offers</a></li>
-                            <li><a href="#" class="scroll topnavlink">Reviews</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </nav>
-        <div id="home" class="section">
-            <div class="modal fade" id="loginModal" tabindex="-1" data-keyboard="false" data-backdrop="static">
-                <div class="modal-dialog modal-sm">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Login form</h4>
-                        </div>
-                        <div class="modal-body">
-                            <p style="color:red;font-size: 17px;">{{ login_error }}</p>
-                            <form action="{% url 'login' %}" id="loginForm" method="post">
-                                {% csrf_token %}
-                                <div class="form-group">
-                                    <label for="inputUsername">Email Address</label>
-                                    <input type="text" id="inputUsername" class="form-control" name="email"/></div>
+<head>
+    {% load staticfiles %}
+    <title>TODO supply a title</title>
+    <link rel="stylesheet" href=" {% static 'css/bootstrap.css'%} " />
+    <script type="text/javascript" src="{% static 'js/jquery-3.3.1.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link href="https://fonts.googleapis.com/css?family=Aclonica|Norican|Yellowtail&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pontano+Sans&display=swap" rel="stylesheet">
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link href="{% static 'date-picker/dist/css/datepicker.min.css' %}" rel="stylesheet" type="text/css">
+    <script src="{% static 'date-picker/dist/js/datepicker.min.js' %}"></script>
+    <script src="{% static 'date-picker/dist/js/i18n/datepicker.en.js' %}" data-language='en' lang='en'></script>
+</head>
 
-                                <div class="form-group">
-                                    <label for="inputPassword">Password</label>
-                                    <input type="password" id="inputPassword" class="form-control" name="password"/>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-primary" id="login_button">Login</button>
-                            <button class="btn btn-default" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
+<body data-spy="scroll" data-target="#mainNavBar">
+<nav class="navbar navbar-default navbar-fixed-top navbar-static-top">
+    <div class="container-fluid">
+        <a href="#home" class="scroll navbar-brand"><span style="color:red">City</span><span style="color:greenyellow">Cafe</span></a>
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
+            <nav id="mainNavBar1" >
+                <ul class="nav nav-pills nav-justified "> <!--the affix class sets the position to fixed but you have to manually specify at what point you want it fixed-->
+                    <li class="active"><a href="#home" class="scroll">Home</a></li>
+                    <li><a href="#services" class="scroll topnavlink">Services</a></li>
+                    <li><a href="#location" class="scroll topnavlink">Location</a></li>
+                    <li><a href="#contact" class="scroll topnavlink">Contact</a></li>
+                    <li><a href="#" class="scroll topnavlink">Offers</a></li>
+                    <li><a href="#" class="scroll topnavlink">Reviews</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</nav>
+<div id="home" class="section">
+    <div class="modal fade" id="loginModal" tabindex="-1" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Login form</h4>
                 </div>
-            </div>
-            <div class="modal fade" id="SignUpModal" tabindex="-1" data-keyboard="false" data-backdrop="static">
-                <div class="modal-dialog modal-sm">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Sign-Up Form</h4>
+                <div class="modal-body">
+                    <p style="color:red;font-size: 17px;">{{ login_error }}</p>
+                    <form action="{% url 'login' %}" id="loginForm" method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="inputUsername">Email Address</label>
+                            <input type="text" id="inputUsername" class="form-control" name="email"/></div>
+
+                        <div class="form-group">
+                            <label for="inputPassword">Password</label>
+                            <input type="password" id="inputPassword" class="form-control" name="password"/>
                         </div>
-                        <div class="modal-body">
-                            <p style="color:red;font-size: 17px;">{{ signup_error }}</p>
-                            <form action="{% url 'signup' %}" method="post" id="signup_form">
-                                {% csrf_token %}
-                                <div class="form-group">
-                                    <input type="text" name="fname" class="form-control" placeholder="First Name"/>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" name="lname" class="form-control" placeholder="Last Name"/>
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" name="email" class="form-control" placeholder="Email Address"/>
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" name="password" class="form-control" placeholder="Password"/>
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" name="password1" class="form-control" placeholder="Confirm Password"/>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <input type="button" value="Sign up" class="btn btn-primary" style="width:100%" id="signup_button"/>
-                        </div>
-                    </div>
+                    </form>
                 </div>
-            </div>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-3 hidden-xs">
-                        <div id="logo">
-                            <h2><a href="#home" class="scroll"><span style="color:red">City</span><span style="color:greenyellow">Cafe</span></a></h2>
-                        </div>
-                        <nav id="mainNavBar" data-spy="affix" data-offset-top="200">
-                            <ul class="nav nav-pills nav-stacked"> <!--the affix class sets the position to fixed but you have to manually specify at what point you want it fixed-->
-                                <li class="active"><a href="#home" class="scroll">Home</a></li>
-                                <li><a href="#services" class="scroll">Services</a></li>
-                                <li><a href="#location" class="scroll">Location</a></li>
-                                <li><a href="#contact" class="scroll">Contact</a></li>
-                                <li><a href="#" class="scroll">Offers</a></li>
-                                <li><a href="#" class="scroll">Reviews</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="col-sm-9 col-md-7">
-                    <div class="home_content">
-                            <div class="row">
-                                <div class="col-xs-12 hidden-xs">
-                                    <div id="book-div">
-                                        <form action="#" class="form-inline text-center" id="book_form" >
-                                            <h2 style="padding:20px 0 0 10px;">Booking Form</h2>
-                                            <div id="inputs">
-                                                <div class="form-group"><input type="text" placeholder="Your Name" class="form-control book-input"/></div>
-                                                <div class="form-group"><select name="rooms" id="rooms" class="form-control book-input">
-                                                        <option value="None">Select No of rooms</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="4">4</option>
-                                                        <option value="5">5</option>
-                                                    </select></div>
-                                                <div class="form-group">
-                                                    <div class="input-group book-input">
-                                                        <input type='text' class="datepicker-here form-control" data-position="left top" data-language='en' placeholder='Check-in Date'/>
-                                                        <span class="input-group-addon">
-                                                            <span style='color:#45bced'><i class="fa fa-calendar" aria-hidden="true" ></i></span>
-                                                        </span>
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <div class="input-group book-input">
-                                                        <input type='text' class="datepicker-here form-control" data-position="left top" data-language='en' placeholder='Check-out Date'/>
-                                                        <span class="input-group-addon">
-                                                            <span style='color:#45bced'><i class="fa fa-calendar" aria-hidden="true" ></i></span>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <button id='booking-submit' class="btn btn-primary text-center">Submit</button>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 visible-xs text-center" id ="book_now">
-                                    <button type="button" class="btn btn-outline-light btn-lg" data-toggle="modal">BOOK NOW</button>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-12" style="margin-top:0; padding-top: 0">
-                                    <div id="imageCarousel" class="carousel slide" data-interval="2500">
-                                        <ol class="carousel-indicators">
-                                            <li data-target="#imageCarousel" data-slide-to="0" class="active"></li>
-                                            <li data-target="#imageCarousel" data-slide-to="1"></li>
-                                            <li data-target="#imageCarousel" data-slide-to="2"></li>
-                                            <li data-target="#imageCarousel" data-slide-to="3"></li>
-                                        </ol>
-                                        <div class="carousel-inner">
-                                            <div class="item active">
-                                                <img src="{% static 'img/image1.jpg' %}" height="200" class="img-responsive"/>
-                                            </div>
-                                            <div class="item">
-                                                <img src="{% static 'img/image2.jpg' %}" height="200" class="img-responsive"/>
-                                            </div>
-                                            <div class="item">
-                                                <img src="{% static 'img/image3.jpg' %}" height="200" class="img-responsive"/>
-                                            </div>
-                                            <div class="item">
-                                                <img src="{% static 'img/image4.jpg' %}" height="200" class="img-responsive"/>
-                                            </div>
-                                        </div>
-                                        <a href="#imageCarousel" class="carousel-control left" data-slide="prev">
-                                            <span class="glyphicon glyphicon-chevron-left"></span>
-                                        </a>
-                                        <a href="#imageCarousel" class="carousel-control right" data-slide="next">
-                                            <span class="glyphicon glyphicon-chevron-right"></span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-                        <div class="col-sm-2 hidden-xs hidden-sm">
-                            {% if user.is_authenticated %}
-                                <ul>
-                                  <li style="font-size: 1.6rem;display:inline;color:#00aced;background: white;padding-right:10px">Logged in as:  <span style="color:darkorange">{{ user.first_name }}</span></li>
-                                  <li style="padding-top: 10px;">
-                                      <a style="color: mediumvioletred" class="pull-right" href="javascript:{document.getElementById('logout_form').submit();}">Logout</a>
-                                  </li>
-                                </ul>
-                                <form id="logout_form" method="post" action="{% url 'logout' %}">
-                                {% csrf_token %}
-                            </form>
-                                {% else %}
-                                <ul id="user_links">
-                                    <li class="user_link" id="btnLoginModal"><a href="#">Login</a></li>
-                                    <li class="user_link" id="btnSingUpModal"><a href="#">Sign Up</a></li>
-                                </ul>
-                            {% endif  %}
-
-                            <button type="button" id ="book" class="btn btn-outline-light btn-lg" data-target="#loginModal1" data-toggle="modal">Hot Deals</button>
-                        </div>
-                       </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" id="login_button">Login</button>
+                    <button class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
-        <section  id="services">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-9 col-md-offset-3">
-                        <div class="section-header">
-                            <div class="cont_heading text-center">
-                                <hr/>
-                                <h2 class="section-title fadeInDown animated" style="color: rgb(214, 69, 11); visibility: visible; animation-name: fadeInDown;"><small class="dot"></small>Our services</h2>
-                                <hr />
-                            </div>
-                            <p class="text-center wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">We offer distinguished
-                                services at affordable prices. Excellent customer service is our core goal</p>
+    </div>
+    <div class="modal fade" id="SignUpModal" tabindex="-1" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Sign-Up Form</h4>
+                </div>
+                <div class="modal-body">
+                    <p style="color:red;font-size: 17px;">{{ signup_error }}</p>
+                    <form action="{% url 'signup' %}" method="post" id="signup_form">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input type="text" name="fname" class="form-control" placeholder="First Name"/>
                         </div>
-                        <div class="row">
-                            <h3 class="service_heading">Dishes</h3>
-                            <div class="col-xs-4">
-                                <img width="200" height="200" src="{% static 'img/dish1.jpeg' %}" alt="image1"  id ="img"/>
-                            </div>
+                        <div class="form-group">
+                            <input type="text" name="lname" class="form-control" placeholder="Last Name"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" class="form-control" placeholder="Email Address"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password" class="form-control" placeholder="Password"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password1" class="form-control" placeholder="Confirm Password"/>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" value="Sign up" class="btn btn-primary" style="width:100%" id="signup_button"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 hidden-xs">
+                <div id="logo">
+                    <h2><a href="#home" class="scroll"><span style="color:red">City</span><span style="color:greenyellow">Cafe</span></a></h2>
+                </div>
+                <nav id="mainNavBar" data-spy="affix" data-offset-top="200">
+                    <ul class="nav nav-pills nav-stacked"> <!--the affix class sets the position to fixed but you have to manually specify at what point you want it fixed-->
+                        <li class="active"><a href="#home" class="scroll">Home</a></li>
+                        <li><a href="#services" class="scroll">Services</a></li>
+                        <li><a href="#location" class="scroll">Location</a></li>
+                        <li><a href="#contact" class="scroll">Contact</a></li>
+                        <li><a href="#" class="scroll">Offers</a></li>
+                        <li><a href="#" class="scroll">Reviews</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-sm-9 col-md-7">
+                <div class="home_content">
+                    <div class="row">
+                        <div class="col-xs-12 hidden-xs">
+                            <div id="book-div">
+                                                                <form action="#" class="form-inline text-center" id="book_form" >
+                                    <h2 style="padding:20px 0 0 10px;">Booking Form</h2>
+                                    <div id="inputs">
+                                        <div class="form-group"><input type="text" placeholder="Your Name" class="form-control book-input"/></div>
+                                        <div class="form-group"><select name="rooms" id="rooms" class="form-control book-input">
+                                            <option value="None">Select No of rooms</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select></div>
+                                        <div class="form-group">
+                                            <div class="input-group book-input">
+                                                <input type='text' class="datepicker-here form-control" data-position="left top" data-language='en' placeholder='Check-in Date'/>
+                                                <span class="input-group-addon">
+                                                                                        <span style='color:#45bced'><i class="fa fa-calendar" aria-hidden="true" ></i></span>
+                                                                                    </span>
+                                            </div>
+                                        </div>
 
-                            <div class="col-xs-4">
-                                <img width="200" height="200" src="{% static 'img/dish2.jpeg' %}" alt="image1"  id ="img"/>
-                            </div>
-                            <div class="col-xs-4">
-                                <img width="200" height="200" src="{% static 'img/dish3.jpeg' %}" alt="image1"  id ="img"/>
-                            </div>
-                        </div>
-                        <br />
-                        <div id="mydiv1" class="collapse">
-                            <div class="row">
-                                <div class="col-xs-4">
-                                    <img width="200" height="200" src="{% static 'img/dish4.jpeg' %}" alt="image1"  id ="img"/>
-                                </div>
-
-                                <div class="col-xs-4">
-                                    <img width="200" height="200" src="{% static 'img/dish5.jpg' %}" alt="image1"  id ="img"/>
-                                </div>
-                                <div class="col-xs-4">
-                                    <img width="200" height="200" src="{% static 'img/dish6.jpg' %}" alt="image1"  id ="img"/>
-                                </div>
+                                        <div class="form-group">
+                                            <div class="input-group book-input">
+                                                <input type='text' class="datepicker-here form-control" data-position="left top" data-language='en' placeholder='Check-out Date'/>
+                                                <span class="input-group-addon">
+                                                                                        <span style='color:#45bced'><i class="fa fa-calendar" aria-hidden="true" ></i></span>
+                                                                                    </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button id='booking-submit' class="btn btn-primary text-center">Submit</button>
+                                </form>
                             </div>
                         </div>
-                        <br />
-                        <div class="text-center more" ><a data-toggle="collapse" href="#mydiv1" id="collapselink1">Show all</a></div>
-                        <div class="row">
-                            <h3 class="service_heading">Drinks</h3>
-                            <div class="col-xs-4">
-                                <img src="img/drink1.jpg" alt="image1" class="img-responsive " id ="img"/>
-                            </div>
-
-                            <div class="col-xs-4">
-                                <img src="img/drink2.jpg" alt="image1" class="img-responsive" id ="img"/>
-                            </div>
-                            <div class="col-xs-4">
-                                <img src="img/drink3.jpg" alt="image1" class="img-responsive" id ="img"/>
+                        <div class="col-xs-12 visible-xs text-center" id ="book_now">
+                            <button type="button" class="btn btn-outline-light btn-lg" data-toggle="modal">BOOK NOW</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12" style="margin-top:0; padding-top: 0">
+                            <div id="imageCarousel" class="carousel slide" data-interval="2500">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#imageCarousel" data-slide-to="0" class="active"></li>
+                                    <li data-target="#imageCarousel" data-slide-to="1"></li>
+                                    <li data-target="#imageCarousel" data-slide-to="2"></li>
+                                    <li data-target="#imageCarousel" data-slide-to="3"></li>
+                                </ol>
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <img src="{% static 'img/image1.jpg' %}" height="200" class="img-responsive"/>
+                                    </div>
+                                    <div class="item">
+                                        <img src="{% static 'img/image2.jpg' %}" height="200" class="img-responsive"/>
+                                    </div>
+                                    <div class="item">
+                                        <img src="{% static 'img/image3.jpg' %}" height="200" class="img-responsive"/>
+                                    </div>
+                                    <div class="item">
+                                        <img src="{% static 'img/image4.jpg' %}" height="200" class="img-responsive"/>
+                                    </div>
+                                </div>
+                                <a href="#imageCarousel" class="carousel-control left" data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left"></span>
+                                </a>
+                                <a href="#imageCarousel" class="carousel-control right" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                </a>
                             </div>
                         </div>
-                        <br />
-                        <div id="mydiv2" class="collapse">
-                            <div class="row">
-                                <div class="col-xs-4">
-                                    <img src="img/drink3.jpg" alt="image1" class="img-responsive " id ="img"/>
-                                </div>
-
-                                <div class="col-xs-4">
-                                    <img src="img/drink1.jpg" alt="image1" class="img-responsive" id ="img"/>
-                                </div>
-                                <div class="col-xs-4">
-                                    <img src="img/drink2.jpg" alt="image1" class="img-responsive" id ="img"/>
-                                </div>
-                            </div>
-                        </div>
-                        <br />
-                        <div class="text-center more" ><a data-toggle="collapse" href="#mydiv2" id="collapselink2">Show all</a></div>
-                        <div id="mydiv4" class="row">
-                            <h3 class="service_heading">Accomodation</h3>
-                            <div class="col-xs-4">
-                                <img src="img/house1.jpg" alt="image1" class="img-responsive " id ="img"/>
-                            </div>
-
-                            <div class="col-xs-4">
-                                <img src="img/house2.jpg" alt="image1" class="img-responsive" id ="img"/>
-                            </div>
-                            <div class="col-xs-4">
-                                <img src="img/house3.jpg" alt="image1" class="img-responsive" id ="img"/>
-                            </div>
-                        </div>
-                        <br />
-                        <div id="mydiv3" class="collapse">
-                            <div class="row">
-                                <div class="col-xs-4">
-                                    <img src="img/house3.jpg" alt="image1" class="img-responsive " id ="img"/>
-                                </div>
-
-                                <div class="col-xs-4">
-                                    <img src="img/house1.jpg" alt="image1" class="img-responsive" id ="img"/>
-                                </div>
-                                <div class="col-xs-4">
-                                    <img src="img/house2.jpg" alt="image1" class="img-responsive" id ="img"/>
-                                </div>
-                            </div>
-                        </div>
-                        <br />
-                        <div class="text-center more" ><a data-toggle="collapse" href="#mydiv3" id="collapselink3">Show all</a></div>
                     </div>
                 </div>
             </div>
-
-        </section>
-        <section id="location">
-            <div class="container-fluid">
+            <div class="col-sm-2 hidden-xs hidden-sm deals-container">
+                <div class="quick_links">
+                    {% if user.is_authenticated %}
+                        <ul>
+                            <li style="font-size: 1.6rem;display:inline;color:#00aced;background: white;padding-right:10px">Logged in as:  <span style="color:darkorange">{{ user.first_name }}</span></li>
+                            <li style="padding-top: 10px;">
+                                <a style="color: mediumvioletred" class="pull-right" href="javascript:{document.getElementById('logout_form').submit();}">Logout</a>
+                            </li>
+                        </ul>
+                        <form id="logout_form" method="post" action="{% url 'logout' %}">
+                            {% csrf_token %}
+                        </form>
+                    {% else %}
+                        <ul id="user_links">
+                            <li class="user_link" id="btnLoginModal"><a href="#">Login</a></li>
+                            <li class="user_link" id="btnSingUpModal"><a href="#">Sign Up</a></li>
+                        </ul>
+                    {% endif  %}
+                </div>
+                <button id="deals-button" class="btn btn-outline-light btn-lg" data-toggle="modal">Discover Deals</button>
+            </div>
+        </div>
+    </div>
+</div>
+<section  id="services">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-9 col-md-offset-3">
+                <div class="section-header">
+                    <div class="cont_heading text-center">
+                        <hr/>
+                        <h2 class="section-title fadeInDown animated" style="color: rgb(214, 69, 11); visibility: visible; animation-name: fadeInDown;"><small class="dot"></small>Our services</h2>
+                        <hr />
+                    </div>
+                    <p class="text-center wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">We offer distinguished
+                        services at affordable prices. Excellent customer service is our core goal</p>
+                </div>
                 <div class="row">
-                    <div class="col-md-9 col-md-offset-3">
-                        <div class="section-header">
-                            <div class="cont_heading text-center">
-                                <hr/>
-                                <h2 class="section-title fadeInDown animated" style="color: rgb(214, 69, 11);
-                                    visibility: visible; animation-name: fadeInDown;">Location</h2>
-                                <hr/>
+                    <h3 class="service_heading">Dishes</h3>
+                    <div class="col-xs-4">
+                        <img width="200" height="200" src="{% static 'img/dish1.jpeg' %}" alt="image1"  id ="img"/>
+                    </div>
 
-                            </div>
-                        </div>
-                        <table class="table table-bordered table-condensed table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Town</th>
-                                    <th>Address</th>
-                                    <th>Outer-View</th>
-                                    <th>Inner-View</th>
-                                    <th>Reviews and ratings</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            <td>Juba</td>
-                            <td>Spiny Towers, Ground floor
-                                <br />P.O Box 271-7937, Juba <br />
-                                Tel: +2491254628</td>
-                            <td><img src="img/out2.jpg" alt="image" class="img-responsive"/></td>
-                            <td><img src="img/in2.jpg" alt="image"  class="img-responsive"/></td>
-                            <td>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i> : 7500
-                                <br />
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i> : 2000
-                                <br />
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i> : 1000
-                                <br />
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i> : 10
-
-                                <br />
-                                <i class="fas fa-star"></i> : 0
-                                <br /><br />
-                                <p><a href="#">1004 Reviews</a></p>
-                            </td>
-                            </tr>
-                            <tr>
-                                <td>Gogrial</td>
-                                <td>Deril Complex
-                                    <br />P.O Box 271-7937, Gogrial <br />
-                                    Tel: +2491254628</td>
-                                <td><img src="img/houseout.jpg" alt="image" class="img-responsive"/></td>
-                                <td><img src="img/housein.jpg" alt="image"  class="img-responsive"/></td>
-                                <td>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i> : 1251
-                                    <br />
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i> : 460
-                                    <br />
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i> : 36
-                                    <br />
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i> : 19
-
-                                    <br />
-                                    <i class="fas fa-star"></i> : 4
-                                    <br /><br />
-                                    <p><a href="#">673 Reviews</a></p>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
+                    <div class="col-xs-4">
+                        <img width="200" height="200" src="{% static 'img/dish2.jpeg' %}" alt="image1"  id ="img"/>
+                    </div>
+                    <div class="col-xs-4">
+                        <img width="200" height="200" src="{% static 'img/dish3.jpeg' %}" alt="image1"  id ="img"/>
                     </div>
                 </div>
+                <br />
+                <div id="mydiv1" class="collapse">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <img width="200" height="200" src="{% static 'img/dish4.jpeg' %}" alt="image1"  id ="img"/>
+                        </div>
+
+                        <div class="col-xs-4">
+                            <img width="200" height="200" src="{% static 'img/dish5.jpg' %}" alt="image1"  id ="img"/>
+                        </div>
+                        <div class="col-xs-4">
+                            <img width="200" height="200" src="{% static 'img/dish6.jpg' %}" alt="image1"  id ="img"/>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="text-center more" ><a data-toggle="collapse" href="#mydiv1" id="collapselink1">Show all</a></div>
+                <div class="row">
+                    <h3 class="service_heading">Drinks</h3>
+                    <div class="col-xs-4">
+                        <img src="img/drink1.jpg" alt="image1" class="img-responsive " id ="img"/>
+                    </div>
+
+                    <div class="col-xs-4">
+                        <img src="img/drink2.jpg" alt="image1" class="img-responsive" id ="img"/>
+                    </div>
+                    <div class="col-xs-4">
+                        <img src="img/drink3.jpg" alt="image1" class="img-responsive" id ="img"/>
+                    </div>
+                </div>
+                <br />
+                <div id="mydiv2" class="collapse">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <img src="img/drink3.jpg" alt="image1" class="img-responsive " id ="img"/>
+                        </div>
+
+                        <div class="col-xs-4">
+                            <img src="img/drink1.jpg" alt="image1" class="img-responsive" id ="img"/>
+                        </div>
+                        <div class="col-xs-4">
+                            <img src="img/drink2.jpg" alt="image1" class="img-responsive" id ="img"/>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="text-center more" ><a data-toggle="collapse" href="#mydiv2" id="collapselink2">Show all</a></div>
+                <div id="mydiv4" class="row">
+                    <h3 class="service_heading">Accomodation</h3>
+                    <div class="col-xs-4">
+                        <img src="img/house1.jpg" alt="image1" class="img-responsive " id ="img"/>
+                    </div>
+
+                    <div class="col-xs-4">
+                        <img src="img/house2.jpg" alt="image1" class="img-responsive" id ="img"/>
+                    </div>
+                    <div class="col-xs-4">
+                        <img src="img/house3.jpg" alt="image1" class="img-responsive" id ="img"/>
+                    </div>
+                </div>
+                <br />
+                <div id="mydiv3" class="collapse">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <img src="img/house3.jpg" alt="image1" class="img-responsive " id ="img"/>
+                        </div>
+
+                        <div class="col-xs-4">
+                            <img src="img/house1.jpg" alt="image1" class="img-responsive" id ="img"/>
+                        </div>
+                        <div class="col-xs-4">
+                            <img src="img/house2.jpg" alt="image1" class="img-responsive" id ="img"/>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="text-center more" ><a data-toggle="collapse" href="#mydiv3" id="collapselink3">Show all</a></div>
             </div>
-        </section>
-        <section class="row section" id="contact">
+        </div>
+    </div>
+
+</section>
+<section id="location">
+    <div class="container-fluid">
+        <div class="row">
             <div class="col-md-9 col-md-offset-3">
                 <div class="section-header">
                     <div class="cont_heading text-center">
                         <hr/>
                         <h2 class="section-title fadeInDown animated" style="color: rgb(214, 69, 11);
-                            visibility: visible; animation-name: fadeInDown;">Contact us</h2>
+                                    visibility: visible; animation-name: fadeInDown;">Location</h2>
                         <hr/>
+
                     </div>
-                    <p class="text-center wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
-                        Talk to us by completing the form below or send us an email and we we'll do all we can to respond to you as quickly as possible.</p>
                 </div>
-                <br />
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-sm-6 col-md-5">
-                            <div class="contact-form">
-                                <h3>Contact Info</h3>
+                <table class="table table-bordered table-condensed table-hover">
+                    <thead>
+                    <tr>
+                        <th>Town</th>
+                        <th>Address</th>
+                        <th>Outer-View</th>
+                        <th>Inner-View</th>
+                        <th>Reviews and ratings</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <td>Juba</td>
+                    <td>Spiny Towers, Ground floor
+                        <br />P.O Box 271-7937, Juba <br />
+                        Tel: +2491254628</td>
+                    <td><img src="img/out2.jpg" alt="image" class="img-responsive"/></td>
+                    <td><img src="img/in2.jpg" alt="image"  class="img-responsive"/></td>
+                    <td>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i> : 7500
+                        <br />
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i> : 2000
+                        <br />
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i> : 1000
+                        <br />
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i> : 10
 
-                                <address>
-                                    <strong>Address:</strong> P.O Box 271-7937 Juba<br>
-                                    <strong>Phone:</strong> +2497481865<br>
-                                    <strong>Email:</strong> thecitycafe01@gmail.com<br>
+                        <br />
+                        <i class="fas fa-star"></i> : 0
+                        <br /><br />
+                        <p><a href="#">1004 Reviews</a></p>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>Gogrial</td>
+                        <td>Deril Complex
+                            <br />P.O Box 271-7937, Gogrial <br />
+                            Tel: +2491254628</td>
+                        <td><img src="img/houseout.jpg" alt="image" class="img-responsive"/></td>
+                        <td><img src="img/housein.jpg" alt="image"  class="img-responsive"/></td>
+                        <td>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i> : 1251
+                            <br />
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i> : 460
+                            <br />
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i> : 36
+                            <br />
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i> : 19
 
-                                </address>
+                            <br />
+                            <i class="fas fa-star"></i> : 4
+                            <br /><br />
+                            <p><a href="#">673 Reviews</a></p>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="row section" id="contact">
+    <div class="col-md-9 col-md-offset-3">
+        <div class="section-header">
+            <div class="cont_heading text-center">
+                <hr/>
+                <h2 class="section-title fadeInDown animated" style="color: rgb(214, 69, 11);
+                            visibility: visible; animation-name: fadeInDown;">Contact us</h2>
+                <hr/>
+            </div>
+            <p class="text-center wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+                Talk to us by completing the form below or send us an email and we we'll do all we can to respond to you as quickly as possible.</p>
+        </div>
+        <br />
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6 col-md-5">
+                    <div class="contact-form">
+                        <h3>Contact Info</h3>
 
-                                <form method="post">
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label for="full_name">Name</label>
-                                                <input type="text" class="form-control" id="full_name" name="full_name">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label for="email">Email</label>
-                                                <input type="text" class="form-control" id="email" name="email">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12">
-                                            <div class="form-group">
-                                                <label for="message">Message</label>
-                                                <textarea id="message" class="form-control" name="message"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12 text-center">
-                                            <button type="submit" class="btn btn-success" name="send" value="Send message"><i class="fa fa-envelope"></i> Send message</button>
-                                        </div>
+                        <address>
+                            <strong>Address:</strong> P.O Box 271-7937 Juba<br>
+                            <strong>Phone:</strong> +2497481865<br>
+                            <strong>Email:</strong> thecitycafe01@gmail.com<br>
+
+                        </address>
+
+                        <form method="post">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="full_name">Name</label>
+                                        <input type="text" class="form-control" id="full_name" name="full_name">
                                     </div>
-                                    <!-- /.row -->
-                                </form>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="text" class="form-control" id="email" name="email">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="message">Message</label>
+                                        <textarea id="message" class="form-control" name="message"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 text-center">
+                                    <button type="submit" class="btn btn-success" name="send" value="Send message"><i class="fa fa-envelope"></i> Send message</button>
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                        </form>
 
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-5 col-md-offset-1">
-                            <div id='newsletter'>
-                                <form action="#" style="padding-left: 20px">
-                                    <p style="font-family:'Lobster', cursive;color:#ffffff;font-size:15px; ">Get notified when we have offers</p>
-                                    <h3>Subscribe to our newsletter</h3>
-                                    <br />
-                                    <input class='form-control' type="text" name="email" placeholder="Enter your email address" style="width:80%; display: inline;"/>
-                                    <button type="submit" class='btn btn-primary'>Send</button>
-                                </form>
-                            </div>
-                            <div class="social text-center">
-                                <h4>Connect</h4>
-                                <a href="#"><i class="fab fa-facebook"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                <a href="#"><i class="fab fa-youtube"></i></a>
-                            </div>
-
-                        </div>
                     </div>
                 </div>
-
-            </div>
-
-        </section>
-        <footer>
-            <div class="container-fluid">
-                <div class="row text-center">
-                    <div class="col-md-4">
-                        <hr class="light" />
-                        <p>555-555-5555</p>
-                        <p>email.eymail.com</p>
-                        <p>100 Street Name</p>
-                        <p>City, State, 00000</p>
-                        <p></p>
+                <div class="col-sm-6 col-md-5 col-md-offset-1">
+                    <div id='newsletter'>
+                        <form action="#" style="padding-left: 20px">
+                            <p style="font-family:'Lobster', cursive;color:#ffffff;font-size:15px; ">Get notified when we have offers</p>
+                            <h3>Subscribe to our newsletter</h3>
+                            <br />
+                            <input class='form-control' type="text" name="email" placeholder="Enter your email address" style="width:80%; display: inline;"/>
+                            <button type="submit" class='btn btn-primary'>Send</button>
+                        </form>
                     </div>
-                    <div class="col-md-4">
-                        <hr class="light"/>
-                       <h5>Our hours</h5>
-                        <hr class="light"/>
-                        <p>Monday: 9am - 5pm</p>
-                        <p>Saturday: 10am - 4pm</p>
-                        <p>Sunday: Closed</p>
-                        <p></p>
-                    </div>
-                    <div class="col-md-4">
-                        <hr class="light"/>
-                        <h5>Service Area</h5>
-                        <hr class="light"/>
-                        <p>City, State, 0000 0</p>
-                        <p>City, State, 00000</p>
-                        <p>City, State, 00000</p>
-                        <p>City, State, 00000</p>
-                    </div>
-                    <div class="col-12">
-                        <hr class="light-100" />
-                        <h5>&copy;TheCityCafe.com</h5>
+                    <div class="social text-center">
+                        <h4>Connect</h4>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
 
                 </div>
             </div>
-        </footer>
-        <script type="text/javascript">
+        </div>
 
-                    $(document).ready(function(){
-                        {% if login_error%}
-                       $('#loginModal').modal('show');
-                            {% elif signup_error %}
-                            $('#SignUpModal').modal('show');
-                     {% endif %}
-                        $(imageCarousel).carousel();
+    </div>
 
-                        $('#btnLoginModal').click(function(){
+</section>
+<footer>
+    <div class="container-fluid">
+        <div class="row text-center">
+            <div class="col-md-4">
+                <hr class="light" />
+                <p>555-555-5555</p>
+                <p>email.eymail.com</p>
+                <p>100 Street Name</p>
+                <p>City, State, 00000</p>
+                <p></p>
+            </div>
+            <div class="col-md-4">
+                <hr class="light"/>
+                <h5>Our hours</h5>
+                <hr class="light"/>
+                <p>Monday: 9am - 5pm</p>
+                <p>Saturday: 10am - 4pm</p>
+                <p>Sunday: Closed</p>
+                <p></p>
+            </div>
+            <div class="col-md-4">
+                <hr class="light"/>
+                <h5>Service Area</h5>
+                <hr class="light"/>
+                <p>City, State, 0000 0</p>
+                <p>City, State, 00000</p>
+                <p>City, State, 00000</p>
+                <p>City, State, 00000</p>
+            </div>
+            <div class="col-12">
+                <hr class="light-100" />
+                <h5>&copy;TheCityCafe.com</h5>
+            </div>
 
-                            $('#loginModal').modal('show');
+        </div>
+    </div>
+</footer>
+<script type="text/javascript">
 
-                        });
+    $(document).ready(function(){
+        {% if login_error%}
+            $('#loginModal').modal('show');
+        {% elif signup_error %}
+            $('#SignUpModal').modal('show');
+        {% endif %}
+        $(imageCarousel).carousel();
 
-                        $(imageCarousel).carousel();
+        $('#btnLoginModal').click(function(){
 
-                        $('#btnSingUpModal').click(function(){
+            $('#loginModal').modal('show');
 
-                            $('#SignUpModal').modal('show');
+        });
 
-                        });
+        $(imageCarousel).carousel();
 
-                        var scrollLink = $('.scroll');
+        $('#btnSingUpModal').click(function(){
 
-                        scrollLink.click(function(e){
+            $('#SignUpModal').modal('show');
 
-                            e.preventDefault();
+        });
 
-                            $('body,html').animate({
+        var scrollLink = $('.scroll');
 
-                                scrollTop: $(this.hash).offset().top
+        scrollLink.click(function(e){
 
-                            },1000);
+            e.preventDefault();
 
-                        });
+            $('body,html').animate({
 
-                        $('#mydiv1').on('shown.bs.collapse', function(){
+                scrollTop: $(this.hash).offset().top
 
-                            document.getElementById('collapselink1').innerHTML= "Show less";
+            },1000);
 
-                        });
+        });
 
-                        $('#mydiv1').on('hidden.bs.collapse', function(){
+        $('#mydiv1').on('shown.bs.collapse', function(){
 
-                            document.getElementById('collapselink1').innerHTML= "Show all";
+            document.getElementById('collapselink1').innerHTML= "Show less";
 
-                        });
+        });
 
-                        $('#mydiv2').on('shown.bs.collapse', function(){
+        $('#mydiv1').on('hidden.bs.collapse', function(){
 
-                            document.getElementById('collapselink2').innerHTML= "Show less";
+            document.getElementById('collapselink1').innerHTML= "Show all";
 
-                        });
+        });
 
-                        $('#mydiv2').on('hidden.bs.collapse', function(){
+        $('#mydiv2').on('shown.bs.collapse', function(){
 
-                            document.getElementById('collapselink2').innerHTML= "Show all";
-                        });
-                        $('#signup_button').click(function(){
+            document.getElementById('collapselink2').innerHTML= "Show less";
 
-                            document.getElementById('signup_form').submit();
+        });
 
-                        });
-                        $('#login_button').click(function(){
+        $('#mydiv2').on('hidden.bs.collapse', function(){
 
-                            document.getElementById('loginForm').submit();
-                        });
-                    });
-                    </script>
-    </body>
+            document.getElementById('collapselink2').innerHTML= "Show all";
+        });
+        $('#signup_button').click(function(){
+
+            document.getElementById('signup_form').submit();
+
+        });
+        $('#login_button').click(function(){
+
+            document.getElementById('loginForm').submit();
+        });
+    });
+</script>
+</body>
 </html>
